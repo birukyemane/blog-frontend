@@ -11,10 +11,17 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./index.css";
+
 import Root from "./routes/root";
+import FilterableBlogTable from "./routes/filterableBlogTable";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Root />}></Route>)
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route index element={<FilterableBlogTable />} />
+      <Route path="/blogs" element={<FilterableBlogTable />} />
+    </Route>
+  )
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
