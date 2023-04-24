@@ -7,7 +7,14 @@ import BlogCard from "./BlogCard";
 
 const BlogTable = ({ blogs }) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        margin: 10,
+      }}
+    >
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
