@@ -1,4 +1,6 @@
 import BlogTable from "../components/BlogTable";
+import { Link} from "react-router-dom";
+import Box from "@mui/material/Box";
 
 const BLOGS = [
   {
@@ -83,7 +85,20 @@ const BLOGS = [
 
 function FilterableBlogTable({ products }) {
   return (
+    <>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "flex-start",
+          margin: 2
+        }}
+      >
+        <Link to={`/blogs/add`}>Add Blog </Link>
+      </Box>
+      <hr></hr>
       <BlogTable blogs={BLOGS} />
+    </>
   );
 }
 

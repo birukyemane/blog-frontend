@@ -7,7 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.button-primary {
+  margin: 10px;
+  background-color: #007FFF;
+  font-family: IBM Plex Sans, sans-serif;
+  font-weight: bold;
+  font-size: 0.875rem;
+  padding: 12px 24px;
+  border-radius: 12px;
+  color: white;
+  transition: all 150ms ease;
+  cursor: pointer;
+  border: none;
 }
