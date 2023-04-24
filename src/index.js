@@ -15,17 +15,21 @@ import "./index.css";
 import Root from "./routes/root";
 import FilterableBlogTable from "./routes/filterableBlogTable";
 import { AddBlog } from "./routes/addBlog";
-import { addBlogAction } from "./actions/actions";
+import { EditBlog } from "./routes/editBlog";
+import { addBlogAction, editBlogAction } from "./router-actions/actions";
+import { blogEditLoader } from "./rotuer-loaders/loaders";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<FilterableBlogTable />} />
       <Route path="/blogs" element={<FilterableBlogTable />} />
+      <Route path="blogs/add" element={<AddBlog />} action={addBlogAction} />
       <Route
-        path="blogs/add"
-        element={<AddBlog />}
-        action={addBlogAction}
+        path="blogs/:id/edit"
+        element={<EditBlog />}
+        loader={blogEditLoader}
+        action={editBlogAction}
       />
     </Route>
   )

@@ -3,7 +3,8 @@ import { Link} from "react-router-dom";
 import Box from "@mui/material/Box";
 
 const BLOGS = [
-  {
+  { 
+    id: "1",
     title: "React custom hook",
     content:
       "Having the correct CSS class names in place ensures that the intended styles are applied to a given component,",
@@ -17,6 +18,7 @@ const BLOGS = [
     updatedAt: "2023-04-23T04:17:51.381+00:00",
   },
   {
+    id: "1",
     title: "React custom hook",
     content:
       "Having the correct CSS class names in place ensures that the intended styles are applied to a given component,",
@@ -30,6 +32,7 @@ const BLOGS = [
     updatedAt: "2023-04-23T04:17:51.381+00:00",
   },
   {
+    id: "1",
     title: "React custom hook",
     content:
       "Having the correct CSS class names in place ensures that the intended styles are applied to a given component,",
@@ -43,6 +46,7 @@ const BLOGS = [
     updatedAt: "2023-04-23T04:17:51.381+00:00",
   },
   {
+    id: "1",
     title: "React custom hook",
     content:
       "Having the correct CSS class names in place ensures that the intended styles are applied to a given component,",
@@ -56,6 +60,7 @@ const BLOGS = [
     updatedAt: "2023-04-23T04:17:51.381+00:00",
   },
   {
+    id: "1",
     title: "React custom hook",
     content:
       "Having the correct CSS class names in place ensures that the intended styles are applied to a given component,",
@@ -69,6 +74,7 @@ const BLOGS = [
     updatedAt: "2023-04-23T04:17:51.381+00:00",
   },
   {
+    id: "1",
     title: "React custom hook",
     content:
       "Having the correct CSS class names in place ensures that the intended styles are applied to a given component,",
