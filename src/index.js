@@ -16,7 +16,7 @@ import Root from "./routes/root";
 import FilterableBlogTable from "./routes/filterableBlogTable";
 import { AddBlog } from "./routes/addBlog";
 import { EditBlog } from "./routes/editBlog";
-import { addBlogAction, editBlogAction } from "./router-actions/actions";
+import { addBlogAction, deleteBlog, editBlogAction } from "./router-actions/actions";
 import { blogEditLoader, blogsLoader } from "./rotuer-loaders/loaders";
 
 const router = createBrowserRouter(
@@ -35,6 +35,7 @@ const router = createBrowserRouter(
         loader={blogEditLoader}
         action={editBlogAction}
       />
+      <Route path="blogs/:id/destroy" action={deleteBlog} />
     </Route>
   )
 );

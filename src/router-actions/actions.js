@@ -49,3 +49,18 @@ export const editBlogAction = async ({ request, params }) => {
 
   return redirect("/blogs");
 };
+
+
+export function deleteBlog({ params }) {
+
+  console.log('destory route')
+  
+  axios.delete(`/blogs/${params.id}`).then(() => {
+    console.log("delte success");
+  });
+
+  console.log("redirect ");
+
+  return redirect("/blogs");
+}
+

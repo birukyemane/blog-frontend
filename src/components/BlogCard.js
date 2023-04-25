@@ -11,6 +11,8 @@ import EditIcon from "@mui/icons-material/Edit";
 import { Link } from "react-router-dom";
 import moment from "moment";
 
+import ActionButton from "./ActionButton";
+
 export default function BlogCard({ blog }) {
   const { _id, title, description, image, createdAt, readingTime } = blog;
 
@@ -29,10 +31,7 @@ export default function BlogCard({ blog }) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <DeleteIcon />
-        </IconButton>
-        <IconButton aria-label="share"></IconButton>
+        <ActionButton urlsegment={`/blogs/${_id}/destroy`} name="Delete" />
         <Link to={`/blogs/${_id}/edit`}>
           <EditIcon />
         </Link>
