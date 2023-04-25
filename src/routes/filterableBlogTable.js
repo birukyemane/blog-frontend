@@ -1,9 +1,39 @@
 import BlogTable from "../components/BlogTable";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
+import { useLoaderData } from "react-router-dom";
 
-const BLOGS = [
-  { 
+function FilterableBlogTable() {
+  const blogs = useLoaderData();
+
+  return (
+    <>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "flex-start",
+          margin: 2,
+        }}
+      >
+        <Link to={`/blogs/add`}>Add Blog </Link>
+      </Box>
+      <hr></hr>
+      <BlogTable blogs={blogs} />
+    </>
+  );
+}
+
+export default FilterableBlogTable;
+
+
+
+
+
+
+
+/* const BLOGS_SCHEMA = [
+  {
     id: "1",
     title: "React custom hook",
     content:
@@ -88,24 +118,4 @@ const BLOGS = [
     updatedAt: "2023-04-23T04:17:51.381+00:00",
   },
 ];
-
-function FilterableBlogTable({ products }) {
-  return (
-    <>
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "flex-start",
-          margin: 2
-        }}
-      >
-        <Link to={`/blogs/add`}>Add Blog </Link>
-      </Box>
-      <hr></hr>
-      <BlogTable blogs={BLOGS} />
-    </>
-  );
-}
-
-export default FilterableBlogTable;
+ */

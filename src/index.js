@@ -17,13 +17,17 @@ import FilterableBlogTable from "./routes/filterableBlogTable";
 import { AddBlog } from "./routes/addBlog";
 import { EditBlog } from "./routes/editBlog";
 import { addBlogAction, editBlogAction } from "./router-actions/actions";
-import { blogEditLoader } from "./rotuer-loaders/loaders";
+import { blogEditLoader, blogsLoader } from "./rotuer-loaders/loaders";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route index element={<FilterableBlogTable />} />
-      <Route path="/blogs" element={<FilterableBlogTable />} />
+      <Route index element={<FilterableBlogTable />} loader={blogsLoader} />
+      <Route
+        path="/blogs"
+        element={<FilterableBlogTable />}
+        loader={blogsLoader}
+      />
       <Route path="blogs/add" element={<AddBlog />} action={addBlogAction} />
       <Route
         path="blogs/:id/edit"

@@ -1,4 +1,13 @@
-// import axios from "axios";
+import axios from "axios";
+
+export const blogsLoader = async () => {
+  try {
+    const res = await axios.get("/blogs");
+    return res.data;
+  } catch (e) {
+    return { error: e };
+  }
+};
 
 export const blogEditLoader = async ({ params }) => {
   //   try {
