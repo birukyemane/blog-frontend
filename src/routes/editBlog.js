@@ -5,13 +5,13 @@ import Container from "@mui/material/Container";
 
 export const EditBlog = () => {
   const blog = useLoaderData();
-  console.log("student edit compon", blog);
+  console.log("blog edit compon", blog);
 
-  const { id, title, content, description, readingTime } = blog;
+  const { _id, title, content, description, readingTime } = blog;
 
   return (
     <Container maxWidth="sm" sx={{ margin: 4 }}>
-      <Form className="form flex-column" method="post" action={`/blogs/${id}/edit`}>
+      <Form className="form flex-column" method="post" action={`/blogs/${_id}/edit`}>
         <TextField
           margin="dense"
           fullWidth
@@ -37,7 +37,7 @@ export const EditBlog = () => {
           style={{ width: 700 }}
           defaultValue={content}
         />
-        <TextField name="minuteToRead" margin="dense" label="Minute to read" type="number" defaultValue={readingTime} />
+        <TextField name="readingTime" margin="dense" label="Minute to read" type="number" defaultValue={readingTime} />
         <div>
           <button className="button-primary">Save</button>
         </div>

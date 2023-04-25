@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 
 export default function BlogCard({ blog }) {
-  const { id, title, description, image, createdAt, readingTime } = blog;
+  const { _id, title, description, image, createdAt, readingTime } = blog;
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -33,7 +33,7 @@ export default function BlogCard({ blog }) {
           <DeleteIcon />
         </IconButton>
         <IconButton aria-label="share"></IconButton>
-        <Link to={`/blogs/${id}/edit`}>
+        <Link to={`/blogs/${_id}/edit`}>
           <EditIcon />
         </Link>
       </CardActions>
