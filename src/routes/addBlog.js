@@ -20,15 +20,23 @@ export const AddBlog = () => {
           name="description"
           label="Description"
           variant="outlined"
+          inputProps={{ maxLength: 100 }}
         />
         <TextareaAutosize
+          name="content"
           margin="dense"
           minRows={15}
           aria-label="empty textarea"
           placeholder="Content..."
           style={{ width: 700 }}
         />
-        <TextField margin="dense" label="Minute to read" type="number" />
+        <TextField
+          name="readingTime"
+          margin="dense"
+          label="Minute to read"
+          defaultValue={5}
+          type="number"
+        />
         <div>
           <button className="button-primary">Submit</button>
         </div>
