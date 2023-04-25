@@ -25,16 +25,17 @@ export default function BlogCard({ blog }) {
       <CardMedia component="img" height="194" image={image} alt="Paella dish" />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {description}
+          {description.slice(0, 30)}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <DeleteIcon />
         </IconButton>
-        <IconButton aria-label="share">
-        </IconButton>
-        <Link to={`/blogs/${id}/edit`}><EditIcon /> </Link>
+        <IconButton aria-label="share"></IconButton>
+        <Link to={`/blogs/${id}/edit`}>
+          <EditIcon />
+        </Link>
       </CardActions>
     </Card>
   );
