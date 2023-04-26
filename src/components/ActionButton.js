@@ -1,15 +1,16 @@
 import { Form } from "react-router-dom";
+import React from "react";
 
-const ActionButton = ({ urlsegment, name }) => {
-    console.log('action button', urlsegment)
-  return (
-    <Form method="post" action={urlsegment}>
-      <button style={{borderStyle: "none"}} variant="text">
-        {name}
-      </button>
-      
-    </Form>
-  );
-};
+class ActionButton extends React.Component {
+  render() {
+    return (
+      <Form method="post" action={this.props.urlsegment}>
+        <button style={{ borderStyle: "none" }} variant="text">
+          {this.props.name}
+        </button>
+      </Form>
+    );
+  }
+}
 
 export default ActionButton;
