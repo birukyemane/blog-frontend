@@ -1,6 +1,4 @@
 import * as React from "react";
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import moment from "moment";
 import Avatar from "@mui/material/Avatar";
@@ -13,7 +11,6 @@ import ContainerCenter from "./ContainerCenter";
 
 export default function BlogMainView({ blog }) {
   const {
-    _id,
     title,
     description,
     content,
