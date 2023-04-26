@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import BlogCard from "./BlogCard";
+import { withConditionalFeedback } from "./withConditionalFeedback";
 
 const BlogTable = ({ blogs }) => {
   return (
@@ -36,3 +37,6 @@ const BlogTable = ({ blogs }) => {
 };
 
 export default BlogTable;
+
+export const BlogTableConditional = withConditionalFeedback(BlogTable); 
+

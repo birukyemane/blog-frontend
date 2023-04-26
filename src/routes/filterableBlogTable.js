@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { useLoaderData } from "react-router-dom";
 import { useAuth } from "../contexts/auth.context";
+import { BlogTableConditional } from "../components/BlogTable";
 
 function FilterableBlogTable() {
   const blogs = useLoaderData();
@@ -21,6 +22,7 @@ function FilterableBlogTable() {
         { currentUser &&  <Link to={`/blogs/add`}>Add Blog </Link>}
       </Box>
       <hr></hr>
+      <BlogTableConditional blogs={blogs} />
       <BlogTable blogs={blogs} />
     </>
   );
