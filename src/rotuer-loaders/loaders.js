@@ -19,6 +19,15 @@ export const blogEditLoader = async ({ params }) => {
 
 };
 
+export const BlogLoader = async ({ params }) => {
+  try {
+    const res = await axios.get(`blogs/${params.id}`);
+    return res.data;
+  } catch (e) {
+    return { error: e };
+  }
+};
+
 
 
 

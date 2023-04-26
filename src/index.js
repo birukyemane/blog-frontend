@@ -16,8 +16,13 @@ import Root from "./routes/root";
 import FilterableBlogTable from "./routes/filterableBlogTable";
 import { AddBlog } from "./routes/addBlog";
 import { EditBlog } from "./routes/editBlog";
-import { addBlogAction, deleteBlog, editBlogAction } from "./router-actions/actions";
-import { blogEditLoader, blogsLoader } from "./rotuer-loaders/loaders";
+import {
+  addBlogAction,
+  deleteBlog,
+  editBlogAction,
+} from "./router-actions/actions";
+import { blogEditLoader, BlogLoader, blogsLoader } from "./rotuer-loaders/loaders";
+import BlogDetail from "./routes/BlogDetail";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +33,8 @@ const router = createBrowserRouter(
         element={<FilterableBlogTable />}
         loader={blogsLoader}
       />
+      <Route path="blogs/:id" element={<BlogDetail />} loader={BlogLoader} />
+
       <Route path="blogs/add" element={<AddBlog />} action={addBlogAction} />
       <Route
         path="blogs/:id/edit"

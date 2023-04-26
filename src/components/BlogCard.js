@@ -4,9 +4,7 @@ import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { Link } from "react-router-dom";
 import moment from "moment";
@@ -19,7 +17,11 @@ export default function BlogCard({ blog }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
-        title={title}
+        title={
+          <Link to={`/blogs/${_id}`}>
+           {title}
+          </Link>
+        }
         subheader={`${moment(createdAt).format(
           "MMMM DD, YYYY"
         )} - ${readingTime} min read`}
