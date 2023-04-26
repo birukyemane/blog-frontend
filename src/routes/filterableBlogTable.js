@@ -23,7 +23,6 @@ function FilterableBlogTable() {
       </Box>
       <hr></hr>
       <BlogTableConditional blogs={blogs} />
-      <BlogTable blogs={blogs} />
     </>
   );
 }
