@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with url and icon 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthMd css-xdmu94-MuiContainer-root"
+>
+  <div
+    className="MuiBox-root css-goqtgp"
+  >
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1fw5ds6-MuiPaper-root-MuiCard-root"
+    >
+      <div
+        className="MuiCardHeader-root css-185gdzj-MuiCardHeader-root"
+      >
+        <div
+          className="MuiCardHeader-avatar css-1ssile9-MuiCardHeader-avatar"
+        >
+          <div
+            aria-label="recipe"
+            className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1012ceb-MuiAvatar-root"
+          >
+            R
+          </div>
+        </div>
+        <div
+          className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+        >
+          <span
+            className="MuiTypography-root MuiTypography-body2 MuiCardHeader-title css-et1ao3-MuiTypography-root"
+          >
+            Biruk
+          </span>
+          <span
+            className="MuiTypography-root MuiTypography-body2 MuiCardHeader-subheader css-83ijpv-MuiTypography-root"
+          >
+            April 22, 2023 - 5 min read
+          </span>
+        </div>
+      </div>
+      <div
+        className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+      >
+        <h3
+          className="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom css-1mktp8m-MuiTypography-root"
+        >
+          React custom hook
+        </h3>
+      </div>
+      <img
+        alt="React custom hook"
+        loading="lazy"
+        src="https://picsum.photos/200"
+        style={
+          Object {
+            "height": 500,
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-1u1r1ho-MuiTypography-root"
+        >
+          Having the correct CSS class names in place ensures that the intended styles are applied to a given component
+        </p>
+      </div>
+      <div
+        className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Having the correct CSS class names in place ensures that the intended styles are applied to a given component,
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
