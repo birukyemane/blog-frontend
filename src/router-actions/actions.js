@@ -50,11 +50,9 @@ export const editBlogAction = async ({ request, params }) => {
   return redirect("/blogs");
 };
 
-
 export function deleteBlog({ params }) {
+  console.log("destory route");
 
-  console.log('destory route')
-  
   axios.delete(`/blogs/${params.id}`).then(() => {
     console.log("delte success");
   });
@@ -64,3 +62,30 @@ export function deleteBlog({ params }) {
   return redirect("/blogs");
 }
 
+export const handleLogin = async ({ request }) => {
+  const data = await request.formData();
+
+  const submission = {
+    userName: data.get("userName"),
+    password: data.get("password"),
+  };
+
+
+  try {
+    const token = await fakeAuth(submission);
+    return { token };
+  } catch (e) {
+    throw e;
+  }
+};
+
+const fakeAuth = ({ userName, password }) =>
+  new Promise((resolve, reject) => {
+    // setTimeout(() => resolve("2342f2f1d131rf12"), 250);
+
+    if (userName === "biruk" && password === "M#WZPdC#DL@4") {
+      resolve("2342f2f1d131rf12");
+    } else {
+      reject(Error("login failed"));
+    }
+  });

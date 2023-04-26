@@ -20,9 +20,16 @@ import {
   addBlogAction,
   deleteBlog,
   editBlogAction,
+  handleLogin,
 } from "./router-actions/actions";
-import { blogEditLoader, BlogLoader, blogsLoader } from "./rotuer-loaders/loaders";
+import {
+  blogEditLoader,
+  BlogLoader,
+  blogsLoader,
+} from "./rotuer-loaders/loaders";
 import BlogDetail from "./routes/BlogDetail";
+import Login from "./routes/Login";
+import LoginErrorBoundary from "./components/LoginErrorBoundary";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,6 +50,12 @@ const router = createBrowserRouter(
         action={editBlogAction}
       />
       <Route path="blogs/:id/destroy" action={deleteBlog} />
+      <Route
+        path="login"
+        element={<Login />}
+        action={handleLogin}
+        errorElement={<LoginErrorBoundary />}
+      />
     </Route>
   )
 );
