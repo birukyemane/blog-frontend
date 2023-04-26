@@ -21,6 +21,7 @@ import {
   deleteBlog,
   editBlogAction,
   handleLogin,
+  useHandleLogout,
 } from "./router-actions/actions";
 import {
   blogEditLoader,
@@ -56,6 +57,7 @@ const router = createBrowserRouter(
         action={handleLogin}
         errorElement={<LoginErrorBoundary />}
       />
+      <Route path="logout" action={useHandleLogout} />
     </Route>
   )
 );

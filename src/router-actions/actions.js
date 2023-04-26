@@ -1,5 +1,6 @@
 import { redirect } from "react-router-dom";
 import axios from "../utilities";
+import { useAuth } from "../contexts/auth.context";
 
 export const addBlogAction = async ({ request }) => {
   const data = await request.formData();
@@ -89,3 +90,10 @@ const fakeAuth = ({ userName, password }) =>
       reject(Error("login failed"));
     }
   });
+
+  export const useHandleLogout = () => {
+    const { setCurrentUser } = useAuth();
+    setCurrentUser(null);
+    localStorage.setItem("user", null);
+    return redirect("/login");
+  };
