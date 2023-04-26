@@ -8,20 +8,18 @@ import Typography from "@mui/material/Typography";
 import EditIcon from "@mui/icons-material/Edit";
 import { Link } from "react-router-dom";
 import moment from "moment";
-
+import DeleteIcon from "@mui/icons-material/Delete";
+import { useAuth } from "../contexts/auth.context";
 import ActionButton from "./ActionButton";
 
 export default function BlogCard({ blog }) {
   const { _id, title, description, image, createdAt, readingTime } = blog;
+  const { currentUser, setCurrentUser } = useAuth();
 
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
-        title={
-          <Link to={`/blogs/${_id}`}>
-           {title}
-          </Link>
-        }
+        title={<Link style={{ color: "black" }} to={`/blogs/${_id}`}>{title}</Link>}
         subheader={`${moment(createdAt).format(
           "MMMM DD, YYYY"
         )} - ${readingTime} min read`}
@@ -32,12 +30,17 @@ export default function BlogCard({ blog }) {
           {description.slice(0, 30)}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <ActionButton urlsegment={`/blogs/${_id}/destroy`} name="Delete" />
-        <Link to={`/blogs/${_id}/edit`}>
-          <EditIcon />
-        </Link>
-      </CardActions>
+      {currentUser && (
+        <CardActions disableSpacing>
+          <ActionButton
+            urlsegment={`/blogs/${_id}/destroy`}
+            name={<DeleteIcon />}
+          />
+          <Link to={`/blogs/${_id}/edit`}>
+            <EditIcon />
+          </Link>
+        </CardActions>
+      )}
     </Card>
   );
 }

@@ -2,9 +2,11 @@ import BlogTable from "../components/BlogTable";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { useLoaderData } from "react-router-dom";
+import { useAuth } from "../contexts/auth.context";
 
 function FilterableBlogTable() {
   const blogs = useLoaderData();
+  const { currentUser, setCurrentUser } = useAuth();
 
   return (
     <>
@@ -16,7 +18,7 @@ function FilterableBlogTable() {
           margin: 2,
         }}
       >
-        <Link to={`/blogs/add`}>Add Blog </Link>
+        { currentUser &&  <Link to={`/blogs/add`}>Add Blog </Link>}
       </Box>
       <hr></hr>
       <BlogTable blogs={blogs} />
@@ -25,12 +27,6 @@ function FilterableBlogTable() {
 }
 
 export default FilterableBlogTable;
-
-
-
-
-
-
 
 /* const BLOGS_SCHEMA = [
   {
