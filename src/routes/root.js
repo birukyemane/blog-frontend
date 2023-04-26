@@ -4,8 +4,9 @@ import { AuthProvider } from "../contexts/auth.context";
 import { useState } from "react";
 
 const Root = () => {
-  const user = localStorage.getItem("user");
-  console.log("getting from local storage", user);
+  let user = localStorage.getItem("user");
+  console.log("getting from local storage", user, user === "null");
+  user = user === "null" ? null : user;
   const [currentUser, setCurrentUser] = useState(user);
 
   return (
