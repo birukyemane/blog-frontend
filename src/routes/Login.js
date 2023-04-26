@@ -6,6 +6,8 @@ import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 
+import ContainerCenter from "../components/ContainerCenter";
+
 const Login = () => {
   const { currentUser, setCurrentUser } = useAuth();
   let token = useActionData();
@@ -28,32 +30,30 @@ const Login = () => {
   }
 
   return (
-    <Container maxWidth="md">
-      <Box sx={{ margin: 5 }}>
-        <h2>Login</h2>
-        <Form className="form flex-column" method="post" action="/login">
-          <TextField
-            margin="dense"
-            fullWidth
-            name="userName"
-            label="Title"
-            variant="outlined"
-          />
-          <TextField
-            margin="dense"
-            fullWidth
-            type="password"
-            name="password"
-            label="password"
-            variant="outlined"
-          />
+    <ContainerCenter>
+      <h2>Login</h2>
+      <Form className="form flex-column" method="post" action="/login">
+        <TextField
+          margin="dense"
+          fullWidth
+          name="userName"
+          label="Title"
+          variant="outlined"
+        />
+        <TextField
+          margin="dense"
+          fullWidth
+          type="password"
+          name="password"
+          label="password"
+          variant="outlined"
+        />
 
-          <div>
-            <button className="button-primary">Login</button>
-          </div>
-        </Form>
-      </Box>
-    </Container>
+        <div>
+          <button className="button-primary">Login</button>
+        </div>
+      </Form>
+    </ContainerCenter>
   );
 };
 
