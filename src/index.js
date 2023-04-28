@@ -31,6 +31,7 @@ import {
 import BlogDetail from "./routes/BlogDetail";
 import Login from "./routes/Login";
 import LoginErrorBoundary from "./components/LoginErrorBoundary";
+import SignUpForm from "./SignUpForm";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -58,6 +59,7 @@ const router = createBrowserRouter(
         errorElement={<LoginErrorBoundary />}
       />
       <Route path="logout" action={useHandleLogout} />
+      <Route path="signup" element={<SignUpForm />} />
     </Route>
   )
 );

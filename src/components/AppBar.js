@@ -42,9 +42,14 @@ export default function ButtonAppBar() {
             </button>
           )}
           {!currentUser && (
-            <Link to={`/login`} style={{ color: "white" }}>
-              Log in
-            </Link>
+            <>
+              <Link to={`/login`} style={{ color: "white" }}>
+                Log in
+              </Link>
+              <Link to={`/signup`} style={{ color: "white" }}>
+                Sign up
+              </Link>
+            </>
           )}
         </Toolbar>
       </AppBar>
